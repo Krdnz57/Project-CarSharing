@@ -13,21 +13,145 @@
     <title>Drive & Bye - Prototype</title>
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Web3 Provider -->
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="mt-4 mb-3">Bezahlvorgang</h1>
+        <hr/>
+
+        <h2 class="mt-4 mb-3">Sicht des Vermieters</h2>
+        <hr/>
+
+        <div class="table-responsive">
+            <table class="table table-light table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Bild</th>
+                        <th scope="col">Bezeichnung</th>
+                        <th scope="col">Mieter</th>
+                        <th scope="col">Datum/Uhrzeit</th>
+                        <th scope="col">Dauer</th>
+                        <th scope="col">Annehmen</th>
+                        <th scope="col">Ablehnen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            <a href="product-info.html">
+                                <img class="img-fluid img-thumbnail mx-auto d-block" src="images/audi.jpg" width="100" />
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="#">
+                                <p class="text-center">Audi A1</p>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">Hasan Karadeniz</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">18.12.2018<br />16:00</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">2 Stunden</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">
+                                <button class="btn btn-primary" type="submit" name="accept" id="accept">
+                                    <span class="fas fa-check"></span>
+                                </button>
+                            </p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">
+                                <button class="btn btn-secondary" type="submit" name="decline" id="decline">
+                                    <span class="fas fa-times"></span>
+                                </button>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="mt-4 mb-3">Sicht des Mieters</h2>
+            <hr/>
+
+            <table class="table table-light table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Bild</th>
+                        <th scope="col">Bezeichnung</th>
+                        <th scope="col">Mieter</th>
+                        <th scope="col">Datum/Uhrzeit</th>
+                        <th scope="col">Dauer</th>
+                        <th scope="col">Annahme</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="align-middle">
+                            <a href="product-info.html">
+                                <img class="img-fluid img-thumbnail mx-auto d-block" src="images/audi.jpg" width="100" />
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <a href="product-info.html">
+                                <p class="text-center">Audi A1</p>
+                            </a>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">Hasan Karadeniz</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">18.12.2018<br />16:00</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">2 Stunden</p>
+                        </td>
+
+                        <td class="align-middle">
+                            <p class="text-center">
+                                <span class="fas fa-question" id="acceptance"></span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ml-auto" id="paymentInfo">
+
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="node_modules/jquery/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/popper.min.js"></script>
-    <script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/js/dist/index.js"></script>
 
     <!-- Own Scripts -->
-    <script type="module" src="scripts/main.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
