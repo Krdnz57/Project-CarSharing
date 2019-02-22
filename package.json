@@ -1,0 +1,61 @@
+{
+    "name": "project-carsharing",
+    "version": "0.0.1",
+    "description": "A prototype for a blockchain-based car sharing system",
+    "keywords": [
+        "car",
+        "cars",
+        "sharing",
+        "car sharing",
+        "blockchain",
+        "smart contracts"
+    ],
+    "homepage": "https://github.com/DonColon/Project-CarSharing#readme",
+    "bugs": {
+        "url": "https://github.com/DonColon/Project-CarSharing/issues",
+        "email": "rrafshda@hs-albsig.de"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Dardan Rrafshi",
+        "email": "rrafshda@hs-albsig.de",
+        "url": "https://github.com/DonColon"
+    },
+    "contributors": [
+        {
+            "name": "Hasan Kerem Karadeniz",
+            "email": "karadeha@hs-albsig.de",
+            "url": "https://github.com/Krdnz57"
+        },
+        {
+            "name": "Daniel Schulz",
+            "email": "schulzda@hs-albsig.de",
+            "url": "https://github.com/Schulzda"
+        },
+        {
+            "name": "Richard Heinrich",
+            "email": "heinriri@hs-albsig.de",
+            "url": "https://github.com/heinriri"
+        },
+        {
+            "name": "Roman Sinkarenko",
+            "email": "sinkarro@hs-albsig.de",
+            "url": "https://github.com/verone42"
+        }
+    ],
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DonColon/Project-CarSharing.git"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.7.2",
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.7",
+        "web3": "^1.0.0-beta.46"
+    }
+}
