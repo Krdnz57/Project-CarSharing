@@ -17,93 +17,99 @@ else
 
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
-const abi = [{
-        "constant": true,
-        "inputs": [],
-        "name": "renter",
-        "outputs": [{
-            "name": "",
-            "type": "address"
-        }],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "owner",
-        "outputs": [{
-            "name": "",
-            "type": "address"
-        }],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "price",
-        "outputs": [{
-            "name": "",
-            "type": "uint256"
-        }],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [{
-            "name": "_value",
-            "type": "uint256"
-        }],
-        "name": "payRentalCharge",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [{
-                "name": "_renter",
-                "type": "address"
-            },
-            {
-                "name": "_price",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "constructor"
-    },
-    {
-        "anonymous": false,
-        "inputs": [{
-                "indexed": false,
-                "name": "_from",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "_charge",
-                "type": "uint256"
-            }
-        ],
-        "name": "PayedRentalCharge",
-        "type": "event"
-    }
+const abi = [
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "payRentalCharge",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "renter",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "price",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_renter",
+				"type": "address"
+			},
+			{
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_charge",
+				"type": "uint256"
+			}
+		],
+		"name": "PayedRentalCharge",
+		"type": "event"
+	}
 ];
 
 const CarSharingContract = web3.eth.contract(abi);
-const CarSharing = CarSharingContract.at("0x7813ac9787a827dd8bed507657fa5b79d355dece");
+const CarSharing = CarSharingContract.at("0x9555accd8c6f5057595b25b2cd2e07c11383a6d7");
 
 const event = CarSharing.PayedRentalCharge();
 event.watch(function(error, result) {
@@ -117,11 +123,11 @@ event.watch(function(error, result) {
 });
 
 accept.addEventListener('click', function() {
-    acceptance.classList.add("fas fa-question");
-    acceptance.classList.remove("fas fa-check");
+    acceptance.classList.remove("fa-question");
+    acceptance.classList.add("fa-check");
 
     CarSharing.payRentalCharge({
         from: web3.eth.accounts[1],
-        value: web3.toWei('5', 'ether')
+        value: new BigNumber(web3.toWei('5', 'ether'))
     });
 });

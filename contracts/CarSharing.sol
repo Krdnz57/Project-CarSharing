@@ -39,10 +39,10 @@ contract CarSharing
         _;
     }
 
-    modifier priced(uint _price)
+    modifier costs(uint _price)
     {
         require(
-            _price >= price,
+            msg.value >= _price,
             "Not enough ether send!"
         );
         _;
@@ -65,16 +65,15 @@ contract CarSharing
     );
 
 
-    function payRentalCharge(uint _value) public payable
+    function payRentalCharge() public payable
         onlyRenter
-        priced(price)
+        costs(price)
         inState(State.Created)
     {
         emit PayedRentalCharge(renter, owner, msg.value);
         state = State.Locked;
 
-        owner.transfer(_value);
-        // address(this).transfer(msg.value);
+        owner.transfer(msg.value);
     }
 
 }
